@@ -36,7 +36,6 @@ class WeatherActivity : AppCompatActivity(), KodeinAware {
         dataBind.inputFindCityWeather.setOnEditorActionListener { view, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 viewModel.fetchWeatherDetailFromDb((view as EditText).text.toString())
-                viewModel.fetchAllWeatherDetailsFromDb()
             }
             false
         }

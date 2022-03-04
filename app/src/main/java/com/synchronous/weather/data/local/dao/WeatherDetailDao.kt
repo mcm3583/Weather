@@ -18,7 +18,4 @@ interface WeatherDetailDao {
     @Query("SELECT * FROM ${WeatherDetail.TABLE_NAME} WHERE cityName = :cityName")
     suspend fun fetchWeatherByCity(cityName: String): WeatherDetail
 
-    @Query("SELECT * FROM ${WeatherDetail.TABLE_NAME}")
-    suspend fun fetchAllWeatherDetails(): List<WeatherDetail>
-
 }

@@ -107,16 +107,4 @@ class WeatherViewModel(private val repository: WeatherRepository) :
         }
     }
 
-    fun fetchAllWeatherDetailsFromDb() {
-        viewModelScope.launch(Dispatchers.IO) {
-            val weatherDetailList = repository.fetchAllWeatherDetails()
-            withContext(Dispatchers.Main) {
-                _weatherDetailListLiveData.postValue(
-                    Event(
-                        State.success(weatherDetailList)
-                    )
-                )
-            }
-        }
-    }
 }
